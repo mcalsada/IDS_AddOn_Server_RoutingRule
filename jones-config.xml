@@ -1,0 +1,33 @@
+<Configuration>
+  <Name>ChangeYourStatus</Name>
+  <Author>Bill Jones, IDS Project</Author>
+  <Version>1.3.0</Version>
+  <Active>true</Active>
+  <Type>Server</Type>
+  
+  <Description>This Server Level Addon allows a user to Select Transactions with a specific status and location value and route those transactions to a new queue.</Description>
+
+  <Settings>
+	<Setting name='chooseprocesstype' value='Borrowing' type='string'>
+	  <Description>This setting value allows you to choose what ProcessType you are looking to make a change to. </Description>
+	</Setting>
+	<Setting name='choosestatus' value='Cancelled by ILL Staff' type='string'>
+	  <Description>This setting value allows you to choose what TransactionStatus you are looking to make a change to.</Description>
+	</Setting>
+    <Setting name='locationvalue' value='Hello' type='string'>
+      <Description>Only transactions that have this value set in Location will be modified by the Addon.</Description>
+    </Setting>	
+    <Setting name='changestatus' value='Super Secret Queue' type='string'>
+      <Description>This setting value allows you to choose the value to change TransactionStatus to.  A new queue will be created if one does not exist.</Description>
+    </Setting>	
+	<Setting name='changeprocess' value='Document Delivery' type='string'>
+	  <Description>This setting value allows you to choose the value to change ProcessType to.</Description>
+	</Setting>
+  </Settings>
+
+  <Forms/>
+  <Files/>
+</Configuration>
+
+
+
