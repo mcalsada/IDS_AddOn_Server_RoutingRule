@@ -1,0 +1,55 @@
+<Configuration>
+	<Name>IDS_ServerRoutingRule</Name>
+	<Author>Bill Jones, Michael C. Mulligan</Author>
+	<Version>0.0.1.0</Version>
+	<Active>false</Active>
+	<Type>Server</Type>
+	<Description>
+		
+	</Description>
+	<Settings>
+	
+		<Setting name='NVTGC' value='ILL' type='string'>
+			<Description>
+				The NVTGC code for the site you would like the 
+				add-on to run for.
+			</Description>
+		</Setting>
+		
+		<Setting name='ProcessType' value='' type='string'>
+			<Description>
+				The ProcessType to look for when identifying
+				transactions to process.
+			</Description>
+		</Setting>
+		
+		<Setting name='TransactionStatus' value='' type=''>
+			<Description>
+				The TransactionStatus to look for when identifying
+				transactions to process.
+			</Description>
+		</Setting>
+		
+		<Setting name='MatchString' value='' type=''>
+			<Description>
+				The query to use when identifying transactions
+				to process.
+			</Description>
+		</Setting>
+		
+		<Setting name='NewProcessType' value='' type=''>
+			<Description>
+				The new ProcessType to set in the transaction
+				during processing.
+			</Description>
+		</Setting>
+		
+		<Setting name='NewTransactionStatus' value='' type=''>
+			<Description>
+				The new TransactionStatus to set in the transaction
+				during processing.
+			</Description>
+		</Setting>
+		
+	</Settings>
+</Configuration>
