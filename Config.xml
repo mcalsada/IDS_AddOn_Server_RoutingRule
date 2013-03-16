@@ -1,7 +1,7 @@
 <Configuration>
 	<Name>IDS_ServerRoutingRule</Name>
 	<Author>Bill Jones, Michael C. Mulligan</Author>
-	<Version>0.0.1.0</Version>
+	<Version>0.0.2.0</Version>
 	<Active>false</Active>
 	<Type>Server</Type>
 	<Description>
@@ -20,34 +20,61 @@
 			<Description>
 				The ProcessType to look for when identifying
 				transactions to process.
+				
+				OPTIONS: Borrowing, Doc Del, Lending
 			</Description>
 		</Setting>
 		
-		<Setting name='TransactionStatus' value='' type=''>
+		<Setting name='RequestType' value='' type='string'>
+			<Description>
+				The RequestType to look for when identifying
+				transactions to process.
+				
+				OPTIONS: Article, Loan
+			</Description>
+		</Setting>
+		
+		<Setting name='TransactionStatus' value='' type='string'>
 			<Description>
 				The TransactionStatus to look for when identifying
 				transactions to process.
+				
+				EXAMPLE: Awaiting Request Processing
 			</Description>
 		</Setting>
 		
-		<Setting name='MatchString' value='' type=''>
+		<Setting name='MatchString' value="" type='string'>
 			<Description>
 				The query to use when identifying transactions
 				to process.
+				
+				NOTES: 
+					- This value must be enclosed in double quotes
+					- This value must use single quotes for the query
+				
+				OPTIONS: 
+					- t = Transactions
+					- u = Users
+				
+				EXAMPLE: u.Status = 'Student' t.Location like '%Closed%Reserve%'
 			</Description>
 		</Setting>
 		
-		<Setting name='NewProcessType' value='' type=''>
+		<Setting name='NewProcessType' value='' type='string'>
 			<Description>
 				The new ProcessType to set in the transaction
 				during processing.
+				
+				OPTIONS: Borrowing, Doc Del, Lending
 			</Description>
 		</Setting>
 		
-		<Setting name='NewTransactionStatus' value='' type=''>
+		<Setting name='NewTransactionStatus' value='' type='string'>
 			<Description>
 				The new TransactionStatus to set in the transaction
 				during processing.
+				
+				EXAMPLE: Awaiting Document Delivery Processing
 			</Description>
 		</Setting>
 		

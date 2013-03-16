@@ -6,9 +6,12 @@
 
 local Settings = {};
 
+Settings.VERSION = '0.0.2.0';
+
 Settings.NVTGC = GetSetting("NVTGC");
 Settings.ProcessType = GetSetting("ProcessType");
-Settings.TranasctionStatus = GetSetting("TransactionStatus");
+Settings.RequestType = GetSetting("RequestType");
+Settings.TransactionStatus = GetSetting("TransactionStatus");
 Settings.MatchString = GetSetting("MatchString");
 Settings.NewProcessType = GetSetting("NewProcessType");
 Settings.NewTransactionStatus = GetSetting("NewTransactionStatus");
@@ -31,9 +34,17 @@ function setOCLCSymbol()
 end
 
 function ProcessTransaction()
-	local currentTN = GetFieldValue("Transaction", "TransactionNumber");
-	SetFieldValue("Transaction", "ProcessType", Settings.NewProcessType);
-	ExecuteCommand("Route", {currentTN, Settings.NewTransactionStatus});
+	local cur_tn = GetFieldValue("Transaction", "TransactionNumber");
+	local cur_type = GetFieldValue("Transaction", "ProcessType");
+	if (cur_type == Settings.NewProcessType) then
+		ExecuteCommand("Route", {cur_tn, Settings.NewTransactionStatus});
+	elseif (cur_type == 'Borrowing') and (Settings.NewProcessType == 'Doc Del') then
+		ExecuteCommand("RouteToDocumentDelivery", {cur_tn, Settings.NewTransactionStatus});
+	elseif (cur_type == 'Doc Del') and (Settings.NewProcessType == 'Borrowing') then
+		ExecuteCommand("RouteToBorrowing", {cur_tn, Settings.NewTransactionStatus});
+	else
+		LogDebug("ERROR! Invalid change of process type");
+	end
 	SaveDataSource("Transaction");
 end
 
@@ -45,6 +56,7 @@ function getTransactionsToProcess()
 	q = q .. "where ( t.Username = u.Username ) ";
 	q = q .. "and ( u.NVTGC = '" .. Settings.NVTGC .. "' ) ";
 	q = q .. "and ( t.ProcessType = '" .. Settings.ProcessType .. "' ) ";
+	q = q .. "and ( t.RequestType = '" .. Settings.RequestType .. "' ) ";
 	q = q .. "and ( t.TransactionStatus = '" .. Settings.TransactionStatus .. "' ) ";
 	q = q .. 'and ( ' .. Settings.MatchString .. ' ) ';
 	return getTransactions(q);
