@@ -13,7 +13,7 @@ Table of Contents
 Configuration
 -------------
 
-The basic 
+Most of these settings mirror the same settings you would use in Customization Manager to set up a new routing rule.
 <dl>
 	<dt>ProcessType</dt>
 		<dd>The ProcessType on which the rule should run</dd>
