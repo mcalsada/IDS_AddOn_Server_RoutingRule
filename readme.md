@@ -1,5 +1,5 @@
 IDS Enhanced Routing Rules Addon
-======================================
+================================
 
 IDS server addon for enhanced routing rules.
 
@@ -7,4 +7,31 @@ IDS server addon for enhanced routing rules.
 Table of Contents
 =================
 
-The TOC is a lie.
+- [Configuration](#configuration)
+
+-------------
+Configuration
+-------------
+
+The basic 
+<dl>
+	<dt>ProcessType</dt>
+		<dd>The ProcessType on which the rule should run</dd>
+		<dd>Options: Borrowing, Doc Del, Lending</dd>
+	<dt>RequestType</dt>
+		<dd>The RequestType on which the rule should run</dd>
+		<dd>Options: Article, Loan</dd>
+	<dt>TransactionStatus</dt>
+		<dd>The Transaction Status on which the rule should run</dd>
+	<dt>MatchString</dt>
+		<dd>The MatchString...'nuff said</dd>
+		<dd>This is where the magic happens</dd>
+	<dt>NewProcessType</dt>
+		<dd>The new ProcessType that the request should receive</dd>
+		<dd>Options: Borrowing, Doc Del, Lending</dd>
+	<dt>NewTransactionStatus</dt>
+		<dd>The new TransactionStatus that the request should receive</dd>
+	<dt>Debug</dt>
+		<dd>You may be asked to turn this on for troubleshooting</dd>
+		<dd>Options: true, false</dd>
+</dl>
