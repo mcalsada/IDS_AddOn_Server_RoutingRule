@@ -18,14 +18,12 @@ Most of these settings mirror the same settings you would use in Customization M
 	<dt>TransactionStatus</dt>
 		<dd>The Transaction Status on which the rule should run</dd>
 	<dt>MatchString</dt>
-		<dd>The MatchString...'nuff said</dd>
+		<dd>The MatchString is the condition(s) that must be met by the transactions to be included in the query</dd>
 		<dd>This is where the magic happens</dd>
+		<dd>Example: t.RequestType="Loan" AND t.Username="Sauron, Lord of the Rings"</dd>
 	<dt>NewProcessType</dt>
 		<dd>The new ProcessType that the request should receive</dd>
 		<dd>Options: Borrowing, Doc Del, Lending</dd>
 	<dt>NewTransactionStatus</dt>
 		<dd>The new TransactionStatus that the request should receive</dd>
-	<dt>Debug</dt>
-		<dd>You may be asked to turn this on for troubleshooting</dd>
-		<dd>Options: true, false</dd>
 </dl>
