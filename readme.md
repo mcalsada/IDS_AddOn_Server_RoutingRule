@@ -3,7 +3,9 @@ IDS Enhanced Routing Rules Addon
 
 IDS server addon for enhanced routing rules.  This addon could easily serve as a template for any routing rule that you may want to schedule.  In addition, you could easily add other functionality (adding info to fields, generating emails, etc).
 
-**Becareful with server addons!  To quote Uncle Ben:  "With great power comes great responsibility."**
+**Becareful with server addons!  To quote Uncle Ben:  "With great power comes great responsibility."  
+If you've been creating client addons and want to try a new challenge, you may want to try server addons like this one.  
+It is important to be in contact with whomever has access to your system manager logs when working with server addons.**
 
 **This addon has not yet been approved by Atlas Systems.**
 
