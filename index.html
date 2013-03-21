@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>IDS Routing Rule Server Addon by idsproject</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>IDS Routing Rule Server Addon</h1>
+        <h2>Your Template for Automagic Routing!</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/idsproject/IDS_AddOn_Server_RoutingRule/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/idsproject/IDS_AddOn_Server_RoutingRule/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/idsproject/IDS_AddOn_Server_RoutingRule" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>IDS Enhanced Routing Rules Addon</h1>
+
+<p>IDS server addon for enhanced routing rules.  This addon could easily serve as a template for any routing rule that you may want to schedule.  In addition, you could easily add other functionality (adding info to fields, generating emails, etc).</p>
+
+<p><strong>Becareful with server addons!  To quote Uncle Ben:  "With great power comes great responsibility."<br>
+If you've been creating client addons and want to try a new challenge, you may want to try server addons like this one.<br>
+It is important to be in contact with whomever has access to your system manager logs when working with server addons.</strong></p>
+
+<p><strong>This addon has not yet been approved by Atlas Systems.</strong></p>
+
+<hr><h2>Configuration</h2>
+
+<p>Most of these settings mirror the same settings you would use in Customization Manager to set up a new routing rule.</p>
+
+<dl>
+<dt>ProcessType</dt>
+        <dd>The ProcessType on which the rule should run</dd>
+        <dd>Options: Borrowing, Doc Del, Lending</dd>
+    <dt>RequestType</dt>
+        <dd>The RequestType on which the rule should run</dd>
+        <dd>Options: Article, Loan</dd>
+    <dt>TransactionStatus</dt>
+        <dd>The Transaction Status on which the rule should run</dd>
+    <dt>MatchString</dt>
+        <dd>The MatchString is the condition(s) that must be met by the transactions to be included in the query</dd>
+        <dd>This is where the magic happens</dd>
+        <dd>Example: t.RequestType="Loan" AND t.Username="Sauron, Lord of the Rings"</dd>
+    <dt>NewProcessType</dt>
+        <dd>The new ProcessType that the request should receive</dd>
+        <dd>Options: Borrowing, Doc Del, Lending</dd>
+    <dt>NewTransactionStatus</dt>
+        <dd>The new TransactionStatus that the request should receive</dd>
+</dl>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
